@@ -425,3 +425,44 @@ tbody tr:last-child {
 .copy-btn:active {
   transform: scale(0.98);
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  table {
+    font-size: 0.875rem;
+  }
+
+  th,
+  td {
+    padding: 12px 8px;
+  }
+
+  .url-cell {
+    max-width: 150px;
+  }
+
+  .actions-cell {
+    flex-direction: column;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
