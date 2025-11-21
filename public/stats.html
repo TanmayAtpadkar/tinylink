@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Stats - TinyLink</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Link Statistics</h1>
+      <a href="/" class="back-link">← Back to Dashboard</a>
+    </header>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading stats...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="errorState" class="error-state hidden">
+      <p>Link not found</p>
+      <a href="/" class="btn">Go to Dashboard</a>
+    </div>
+
+    <!-- Stats Content -->
+    <div id="statsContent" class="hidden">
+      <div class="stats-card">
+        <h2>Short Link</h2>
+        <div class="short-link">
+          <input type="text" id="shortLink" readonly>
+        </div>
+      </div>
+
+      <div class="stats-card">
+        <h2>Target URL</h2>
+        <a id="targetUrl" href="#" target="_blank" class="target-url"></a>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-label">Total Clicks</div>
+          <div class="stat-value" id="totalClicks">0</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-label">Created</div>
+          <div class="stat-value" id="createdAt">-</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-label">Last Clicked</div>
+          <div class="stat-value" id="lastClicked">Never</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-label">Short Code</div>
+          <div class="stat-value" id="shortCode">-</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button onclick="deleteLink()" class="btn btn-danger">Delete Link</button>
+        <a href="/" class="btn btn-secondary">Back to Dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/stats.js"></script>
+</body>
+
+</html>

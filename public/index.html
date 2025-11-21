@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyLink - URL Shortener</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>TinyLink</h1>
+      <p>Shorten your URLs instantly</p>
+    </header>
+
+    <!-- Add Link Form -->
+    <section class="add-link-section">
+      <h2>Create Short Link</h2>
+      <form id="addLinkForm">
+        <div class="form-group">
+          <label for="targetUrl">Target URL *</label>
+          <input type="url" id="targetUrl" placeholder="https://example.com/very/long/url" required>
+          <span class="error-message" id="urlError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="customCode">Custom Code (optional, 6-8 characters)</label>
+          <input type="text" id="customCode" placeholder="mycode" pattern="[A-Za-z0-9]{6,8}" minlength="6"
+            maxlength="8">
+          <span class="help-text">Leave blank for random code</span>
+          <span class="error-message" id="codeError"></span>
+        </div>
+
+        <button type="submit" id="submitBtn">
+          <span id="btnText">Create Link</span>
+          <span id="btnLoader" class="loader hidden"></span>
+        </button>
+      </form>
+
+      <!-- Success Message -->
+      <div id="successMessage" class="success-message hidden">
+        <p>✅ Link created successfully!</p>
+        <div class="short-link">
+          <input type="text" id="shortLinkInput" readonly>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links Table -->
+    <section class="links-section">
+      <div class="section-header">
+        <h2>Your Links</h2>
+        <input type="text" id="searchInput" placeholder="Search by code or URL..." class="search-input">
+      </div>
+
+      <!-- Loading State -->
+      <div id="loadingState" class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading links...</p>
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="empty-state hidden">
+        <p> No links yet. Create your first one above!</p>
+      </div>
+
+      <!-- Error State -->
+      <div id="errorState" class="error-state hidden">
+        <p> Failed to load links. Please refresh the page.</p>
+      </div>
+
+      <!-- Links Table -->
+      <div id="linksTableContainer" class="hidden">
+        <table id="linksTable">
+          <thead>
+            <tr>
+              <th>Short Code</th>
+              <th>Target URL</th>
+              <th>Clicks</th>
+              <th>Last Clicked</th>
+              <th>Created</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="linksTableBody">
+            <!-- Populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
