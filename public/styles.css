@@ -405,43 +405,23 @@ tbody tr:last-child {
   background: #4b5563;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
+.copy-btn {
+  padding: 10px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
 
-  header h1 {
-    font-size: 2rem;
-  }
+.copy-btn:hover {
+  background: #5568d3;
+}
 
-  .section-header {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .search-input {
-    width: 100%;
-  }
-
-  table {
-    font-size: 0.875rem;
-  }
-
-  th,
-  td {
-    padding: 12px 8px;
-  }
-
-  .url-cell {
-    max-width: 150px;
-  }
-
-  .actions-cell {
-    flex-direction: column;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
+.copy-btn:active {
+  transform: scale(0.98);
 }

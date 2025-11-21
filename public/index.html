@@ -44,6 +44,7 @@
         <p>✅ Link created successfully!</p>
         <div class="short-link">
           <input type="text" id="shortLinkInput" readonly>
+          <button onclick="copyLink()" class="copy-btn">Copy</button>
         </div>
       </div>
     </section>
@@ -63,12 +64,12 @@
 
       <!-- Empty State -->
       <div id="emptyState" class="empty-state hidden">
-        <p> No links yet. Create your first one above!</p>
+        <p>📝 No links yet. Create your first one above!</p>
       </div>
 
       <!-- Error State -->
       <div id="errorState" class="error-state hidden">
-        <p> Failed to load links. Please refresh the page.</p>
+        <p>❌ Failed to load links. Please refresh the page.</p>
       </div>
 
       <!-- Links Table -->
