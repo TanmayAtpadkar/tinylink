@@ -37,7 +37,7 @@ function setupEventListeners() {
 // Create Link
 async function handleCreateLink(e) {
   e.preventDefault();
-  
+
   // Reset errors
   urlError.textContent = '';
   codeError.textContent = '';
@@ -120,7 +120,7 @@ async function loadLinks() {
 
   try {
     const response = await fetch(`${API_URL}/links`);
-    
+
     if (!response.ok) {
       throw new Error('Failed to fetch links');
     }
@@ -149,11 +149,11 @@ function renderLinks(links) {
 
   links.forEach(link => {
     const row = document.createElement('tr');
-    
+
     const shortUrl = `${window.location.origin}/${link.code}`;
     const createdDate = new Date(link.created_at).toLocaleDateString();
-    const lastClicked = link.last_clicked 
-      ? new Date(link.last_clicked).toLocaleDateString() 
+    const lastClicked = link.last_clicked
+      ? new Date(link.last_clicked).toLocaleDateString()
       : 'Never';
 
     row.innerHTML = `
@@ -185,7 +185,7 @@ function handleSearch(e) {
     return;
   }
 
-  const filtered = allLinks.filter(link => 
+  const filtered = allLinks.filter(link =>
     link.code.toLowerCase().includes(query) ||
     link.target_url.toLowerCase().includes(query)
   );
@@ -204,10 +204,10 @@ function handleSearch(e) {
 }
 
 // Copy Link
-function copyLink() {
+function copyLink(event) {
   shortLinkInput.select();
   shortLinkInput.setSelectionRange(0, 99999); // For mobile
-  
+
   navigator.clipboard.writeText(shortLinkInput.value)
     .then(() => {
       const copyBtn = event.target;

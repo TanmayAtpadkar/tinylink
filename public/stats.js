@@ -77,7 +77,7 @@ async function loadStats() {
 }
 
 // Copy Link
-function copyStatsLink() {
+function copyStatsLink(event) {
   shortLinkInput.select();
   shortLinkInput.setSelectionRange(0, 99999);
   
